@@ -24,7 +24,8 @@ jobs:
 
   DeployDev:
     name: Deploy to Dev
-    if: github.event_name == 'pull_request'
+    # if: github.event_name == 'pull_request'
+  if: github.event.ref == 'refs/heads/development'
     needs: [ Build ]
     runs-on: ubuntu-latest
     environment:
